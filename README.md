@@ -1,4 +1,4 @@
-# Intro to JavaScript
+# Programming in PHP
 
 This repo contains the practice exercises I did for Programming in PHP as part of the Full Stack Web Development Program at [Business College Helsinki](https://en.bc.fi/qualifications/full-stack-web-developer-program/).
 
