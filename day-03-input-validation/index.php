@@ -9,6 +9,41 @@
 <body>
     
     <?php
+
+        /**
+         * Takes 1 argument, validate that it is a non empty string, and doesn’t have more than 25 characters
+         *
+         * @param string $name
+         * @return bool
+         */
+        function validate_username($name) {
+            // First checks that variable is a string, then that it is not an empty string and finally that it is not more that     25 char - less than 26 char
+            if (is_string($name) && $name !== "" && strlen($name) < 26) {
+                return 'true';
+            } else {
+                // Return false if not all conditions are met
+                return 'false';
+            }
+            
+        }
+    
+        echo '"TestUser@local" is a valid username: ' . validate_username("TestUser@local"); // true
+        echo '<br>';
+        echo '"b0b!" is a valid username: ' . validate_username("b0b!"); // true
+        echo '<br>';
+        echo 'Number 23 is a valid username: ' . validate_username(23); // false
+        echo '<br>';
+        echo '"asdgfdhkgssssddaafdkddaaaa", with ';
+        echo strlen("asdgfdhkgssssddaafdkddaaaa");
+        echo ' character  is a valid username: ' . validate_username("asdgfdhkgssssddaafdkddaaaa"); // false'
+        echo '<br>';
+        echo 'An empty string is a valid username: ' . validate_username(""); // false
+        echo '<br>';
+        echo 'A boolean is a valid username: ' . validate_username(true); // false
+        echo '<br>';
+        echo '<br>';
+    
+
         function validate_weekday($day) {
             // TODO: Add solution code here
         }
