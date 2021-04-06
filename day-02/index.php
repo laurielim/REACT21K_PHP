@@ -20,8 +20,8 @@
     // Show  user how many pokemons are available
     echo 'Number of pokemons: ' . $num_of_pokemons . '<br>';
 
-    // Split the array into chunks of 50 pokemons
-    $pokemon_chunks = array_chunk($pokemons, 50);
+    // Split the array into chunks of 50 pokemons, set preserve_keys to true to retain index number
+    $pokemon_chunks = array_chunk($pokemons, 50, true);
     // Count the number of elements inside the pokemon_chunks array
     $num_of_chunks = count($pokemon_chunks);
     // Show user how many groups of pokemon there is
@@ -56,7 +56,7 @@
         // If user submit a number 
         if ($user_input):
         // Loop through the list of pokemons
-        foreach($pokemon_chunks[$user_input  - 1] as    $index=>$pokemon) {
+        foreach($pokemon_chunks[$user_input  - 1] as $index=>$pokemon) {
             echo '<br>';
             // Display each pokemon with an index number
             echo $index + 1;
