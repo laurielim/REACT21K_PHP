@@ -24,9 +24,9 @@
                 // Return false if not all conditions are met
                 return 'false';
             }
-            
+
         }
-    
+
         echo '"TestUser@local" is a valid username: ' . validate_username("TestUser@local"); // true
         echo '<br>';
         echo '"b0b!" is a valid username: ' . validate_username("b0b!"); // true
@@ -42,10 +42,41 @@
         echo 'A boolean is a valid username: ' . validate_username(true); // false
         echo '<br>';
         echo '<br>';
-    
 
+
+        /**
+        * Takes 1 argument, validate that it is an integer within the range of 0 - 6 (0 - Sunday, 1 - Monday, 2 - Tuesday, 3 - Wednesday, 4 - Thursday, 5 - Friday, 6 - Saturday). Return true if all conditions are met, false otherwise
+        *
+        * @param int $day
+        * @return bool
+        */
         function validate_weekday($day) {
-            // TODO: Add solution code here
+            // Check that variable is an integer
+        if (is_int($day)){
+            // Specify options
+            $options = array (
+                'options' => array (
+                    // Defaults to -1 if does not to meet condition
+                    'default' => -1,
+                    // Range start at 0
+                    'min_range' => 0,
+                    // Range ends at 6
+                    'max_range' => 6,
+                )
+            );
+
+            // Filter variable using previously defined options
+            $validation = filter_var($day, FILTER_VALIDATE_INT, $options);
+
+            // If -1, it means condition not met so return false
+            if ($validation === -1): return 'false';
+            // Else return true
+            else: return 'true';
+            endif;
+        } else {
+            // Return false if variable is not an integer
+            return 'false';
+        }
         }
 
         echo '0 is a valid weekday: ' . validate_weekday(0); // true
@@ -63,6 +94,7 @@
         echo 'An empty string is a valid weekday: ' . validate_weekday(''); // false
         echo '<br>';
         echo 'An string is a valid weekday: ' . validate_weekday('5'); // false
+        echo '<br>';
         echo '<br>';
 
         function validate_widthdraw_amount($amount, $balance) {
