@@ -97,8 +97,36 @@
         echo '<br>';
         echo '<br>';
 
+        /**
+         * Takes 2 arguments, validate that both are numerical amounts without decimal point, non negative, and the withdraw amount is less than or equal to the current bank balance amount. Return true if all conditions are met, false otherwise
+         *
+         * @param int $amount
+         * @param int $balance
+         * @return bool
+         */
         function validate_widthdraw_amount($amount, $balance) {
-            // TODO: Add solution code here
+            // Checks that both variables are positive integers
+            if (is_int($amount) && is_int($balance) && $amount > 0 && $balance > 0){
+                // Specify options
+                $options = array (
+                    'options' => array (
+                        // Defaults to -1 if does not to meet condition
+                        'default' => -1,
+                        // Max withdrawal amount is total balance
+                        'max_range' => $balance,
+                    )
+                    );
+                $validation = filter_var($amount, FILTER_VALIDATE_INT, $options);
+
+                // If -1, it means amount exceeds balance so return false
+                if ($validation === -1): return 'false';
+                // Else return true
+                else: return 'true';
+                endif;
+            } else {
+                // Return false if variables are not positive integers
+                return 'false';
+            }
         }
 
         echo 'Able to withdraw 100 from an account of 1000 balance: ' . validate_widthdraw_amount(100, 1000); // true
@@ -114,6 +142,7 @@
         echo 'Able to withdraw 0 from an account of negative 100 balance: ' . validate_widthdraw_amount(0, -100); // false
         echo '<br>';
         echo 'Able to withdraw null from an account of 0 balance: ' . validate_widthdraw_amount(null, 0); // false
+        echo '<br>';
         echo '<br>';
 
         function validate_school_email($email_addr) {
