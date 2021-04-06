@@ -145,9 +145,30 @@
         echo '<br>';
         echo '<br>';
 
+        /**
+         * takes 1 argument, validate that the input is indeed an email address, and ends with bc.fi. Return true if all conditions are met, false otherwise
+         *
+         * @param str $email_addr
+         * @return bool
+         */
         function validate_school_email($email_addr) {
-            // TODO: Add solution code here
-        }
+            // Checks that variable is formatted as an email
+            $validation = filter_var($email_addr, FILTER_VALIDATE_EMAIL);
+            if ($validation) {
+                // If it is an email, split email into 2 parts
+                $email_parts = explode("@",$email_addr);
+                // Assign the 2nd part to variable domain
+                $domain = $email_parts[1];
+                // If domain is "bc.fi" return true
+                if ($domain === "bc.fi"): return 'true';
+                // Otherwise return false
+                else: return 'false';
+                endif;
+            } else {
+                // Return false if variable is not formatted as an email
+                return 'false';
+            }
+        };
 
         echo 'test_student@bc.fi is a valid school email: ' . validate_school_email('test_student@bc.fi'); // true
         echo '<br>';
