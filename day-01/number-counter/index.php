@@ -36,16 +36,16 @@
       // Show user the number
       echo "<p>The random number is $randomNum, which in Finnish is ";
 
-      // Create dictionary
-      $one = "yksi";
-      $two = "kaksi";
-      $three = "kolme";
-      $four = "neljä";
-      $five = "viisi";
-      $six = "kuusi";
-      $seven = "seitsemän";
-      $eight = "kahdeksan";
-      $nine = "yhdeksän";
+      // Create dictionary using constants
+      define('ONE', 'yksi');
+      define('TWO', 'kaksi');
+      define('THREE', 'kolme');
+      define('FOUR', 'neljä');
+      define('FIVE', 'viisi');
+      define('SIX', 'kuusi');
+      define('SEVEN', 'seitsemän');
+      define('EIGHT', 'kahdeksan');
+      define('NINE', 'yhdeksän');
 
       // Split digits
       $firstDigit = $randomNum % 10;
@@ -57,62 +57,62 @@
             $firstDigitStr = "";
             break;
         case 1:
-            $firstDigitStr = $one;
+            $firstDigitStr = ONE;
             break;
         case 2:
-            $firstDigitStr = $two;
+            $firstDigitStr = TWO;
             break;
         case 3:
-            $firstDigitStr = $three;
+            $firstDigitStr = THREE;
             break;
         case 4:
-            $firstDigitStr = $four;
+            $firstDigitStr = FOUR;
             break;
         case 5:
-            $firstDigitStr = $five;
+            $firstDigitStr = FIVE;
             break;
         case 6:
-            $firstDigitStr = $six;
+            $firstDigitStr = SIX;
             break;
         case 7:
-            $firstDigitStr = $seven;
+            $firstDigitStr = SEVEN;
             break;
         case 8:
-            $firstDigitStr = $eight;
+            $firstDigitStr = EIGHT;
             break;
         case 9:
-            $firstDigitStr = $nine;
+            $firstDigitStr = NINE;
             break;
       }
 
       if ($randomNum > 10) {
         switch ($secondDigit) {
             case 1:
-                $secondDigitStr = $one;
+                $secondDigitStr = ONE;
                 break;
             case 2:
-                $secondDigitStr = $two;
+                $secondDigitStr = TWO;
                 break;
             case 3:
-                $secondDigitStr = $three;
+                $secondDigitStr = THREE;
                 break;
             case 4:
-                $secondDigitStr = $four;
+                $secondDigitStr = FOUR;
                 break;
             case 5:
-                $secondDigitStr = $five;
+                $secondDigitStr = FIVE;
                 break;
             case 6:
-                $secondDigitStr = $six;
+                $secondDigitStr = SIX;
                 break;
             case 7:
-                $secondDigitStr = $seven;
+                $secondDigitStr = SEVEN;
                 break;
             case 8:
-                $secondDigitStr = $eight;
+                $secondDigitStr = EIGHT;
                 break;
             case 9:
-                $secondDigitStr = $nine;
+                $secondDigitStr = NINE;
                 break;
         }
       }
@@ -129,7 +129,7 @@
       } elseif ($randomNum < 20) {
         echo $firstDigitStr . "toista";
       } else {
-        echo $secondDigitStr . "kymmentä" . $firstDigitStr;
+        echo $secondDigitStr . "kymmentä" . $firstDigitStr . ".";
       }
       ?>
     </section>
