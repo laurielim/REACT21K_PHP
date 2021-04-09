@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <title>Laurie Lim Sam</title>
+  </head>
+  <body>
+    <div class="container">
+    <header>
+      <h1>
+        <a href="/s2100139/">Laurie Lim Sam</a>
+      </h1>
+      <nav>
+        <ul>
+          <li><a href="//laurielim.github.io">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h2>Hello, World! (And especially you, Hoang)</h2>
+      <p>
+        Welcome to my page on the bc.fi server.
+      </p>
+      <p>If you'd like to see my work,
+        <a href="//github.com/laurielim">check out my github</a> instead.</p>
+      <section id="contact">
+        <h2>Contact Me</h2>
+        <form action="contact.php" method="POST">
+          <input
+          maxlength= "20"
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Enter your name"
+            required
+          />
+          <input
+          maxlength="254"
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Enter your email"
+            required
+          />
+          <p class="antispam">Leave this empty: <input type="text" name="url" /></p>
+          <textarea
+            name="message"
+            id="message"
+            cols="30"
+            rows="10"
+            placeholder="Your message goes here.. maybe something like 'Good job, you've completed the assignment!' Or 'Cool page!'"
+            required
+          ></textarea>
+          <button type="submit">Send message</button>
+        </form>
+      </section>
+    </main>
+    <footer><p>Laurie Lim Sam © 2021</p></footer>
+  </body>
+</div>
+</html>

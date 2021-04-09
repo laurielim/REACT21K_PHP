@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
+    monospace;
+  font-size: 20px;
+  line-height: 1.5;
+  margin: 0 auto;
+  max-width: 960px;
+  background-color: #222;
+  color: #fafafa;
+}
+
+.container {
+  margin: 1vh;
+  min-height: 98vh;
+  position: relative;
+}
+
+a {
+  color: lime;
+}
+
+a:visited {
+  color: limegreen;
+}
+
+header,
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header {
+  margin-bottom: 2rem;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  height: 3rem;
+}
+
+main {
+  padding-bottom: 3rem;
+}
+
+main * + * {
+  margin-top: 2rem;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 2rem;
+}
+
+form {
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 2rem;
+}
+
+form * {
+  display: block;
+}
+
+input,
+textarea {
+  padding: 0.5rem;
+  width: 100%;
+  font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
+    monospace;
+  font-size: 20px;
+}
+
+button {
+  font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
+    monospace;
+  font-size: 20px;
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+  border: 0.2rem solid lime;
+  color: lime;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: lime;
+  color: #222;
+}
+
+button:active {
+  transform: scale(0.9);
+  background-color: limegreen;
+  color: #222;
+  border: none;
+}
+
+:focus {
+  outline: 0.3rem outset violet;
+  outline-offset: 0.5rem;
+}
+
+.antispam {
+  display: none;
+}
