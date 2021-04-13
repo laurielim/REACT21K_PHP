@@ -16,18 +16,20 @@
   <body>
   <script>
       <?php
+      // Get current page and assign it to page variable
         if (isset($_GET['page'])) {
           $page = $_GET['page'];
         } else {
+          // Automatically assign a page if there isn't one yet
           $page = 1;
         }
       ?>
+      // Assign current page number to a global variable
       let currentPage = <?php echo json_encode($page) ?>;
     </script>
 
     <section id="poke-list"></section>
     <div id="pagination"></div>
     <script src="script.js"></script>
-    
   </body>
 </html>
