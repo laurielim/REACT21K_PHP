@@ -8,15 +8,14 @@
       // Parse JSON
       .then((response) => response.json())
       .then((data) => {
+        console.log(data[0]);
         // Assign array of pokemonts to a variable
-        let pokemons = data;
+        let pokemons = data[1];
         // Iterate through each Pokemon to display them
 
         for (const [index, pokemon] of Object.entries(pokemons)) {
           addPokemonName(pokemon, index);
         }
-
-        // pokemons.forEach(addPokemonName);
       });
 
     /**

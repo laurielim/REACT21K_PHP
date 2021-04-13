@@ -25,7 +25,10 @@
     // Count the number of elements inside the pokemon_chunks array
     $num_of_chunks = count($pokemon_chunks);
 
-    $json_formatted_results = json_encode($pokemon_chunks[$pageIndex]);
+    $json = array($num_of_chunks, $pokemon_chunks[$pageIndex]);
+
+
+    $json_formatted_results = json_encode($json);
     echo $json_formatted_results;
 
     /**
