@@ -28,7 +28,7 @@
       $emailValidation = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
 
       if ($emailValidation) {
-        $message = 'Message from ' . $_POST['name'] . ': ' . $_POST['message'] . ' | Reply to : ' . $_POST['email']; 
+        $message = 'Message from ' . htmlspecialchars($_POST['name']) . ': ' . htmlspecialchars($_POST['message']) . ' | Reply to : ' . htmlspecialchars($_POST['email']); 
         $sent_status = mail('s2100139@edu.bc.fi', 'Sent from bc.fi server contact form', $message);
       } 
       
