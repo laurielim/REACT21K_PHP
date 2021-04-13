@@ -6,10 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <title>Pokemon List</title>
+    <style>
+      #pagination a,
+      #pagination span {
+        margin-right: 1rem;
+      }
+    </style>
   </head>
   <body>
-    <section id="poke-list"></section>
-    <script>
+  <script>
       <?php
         if (isset($_GET['page'])) {
           $page = $_GET['page'];
@@ -19,6 +24,9 @@
       ?>
       let currentPage = <?php echo json_encode($page) ?>;
     </script>
+
+    <section id="poke-list"></section>
+    <div id="pagination"></div>
     <script src="script.js"></script>
     
   </body>
