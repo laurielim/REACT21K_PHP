@@ -9,6 +9,20 @@
   </head>
   <body>
     <section id="poke-list"></section>
-    <script src="script.js"></script>
+    <script>
+      <?php
+    if (isset($_GET['page'])) {
+      $page = $_GET['page'];
+  } else {
+      $page = 1;
+  }
+      ?>
+     
+      fetch(`formatted_pokemon.php?page=${<?php echo json_encode($page) ?>}`)
+      // Parse JSON
+      .then((response) => response.json())
+      .then((data) => console.log(data))
+    </script>
+    <!-- <script src="script.js"></script> -->
   </body>
 </html>

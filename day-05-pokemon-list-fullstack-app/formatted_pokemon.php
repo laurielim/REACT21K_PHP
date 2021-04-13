@@ -14,9 +14,15 @@
 
     // print_r($formatted_data);
     // echo '</pre>';
+    $page = $_GET['page'];
 
-    $json_formatted_results = json_encode($formatted_results);
-    echo $json_formatted_results;
+    $json_formatted_results = json_encode(array($page));
+    echo $page;
+
+
+
+    // $json_formatted_results = json_encode($formatted_results);
+    // echo $json_formatted_results;
 
     /**
      * Create new JSON file
