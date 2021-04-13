@@ -11,18 +11,15 @@
     <section id="poke-list"></section>
     <script>
       <?php
-    if (isset($_GET['page'])) {
-      $page = $_GET['page'];
-  } else {
-      $page = 1;
-  }
+        if (isset($_GET['page'])) {
+          $page = $_GET['page'];
+        } else {
+          $page = 1;
+        }
       ?>
-     
-      fetch(`formatted_pokemon.php?page=${<?php echo json_encode($page) ?>}`)
-      // Parse JSON
-      .then((response) => response.json())
-      .then((data) => console.log(data))
+      let currentPage = <?php echo json_encode($page) ?>;
     </script>
-    <!-- <script src="script.js"></script> -->
+    <script src="script.js"></script>
+    
   </body>
 </html>

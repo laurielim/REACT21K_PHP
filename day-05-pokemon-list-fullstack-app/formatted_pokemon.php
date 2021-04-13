@@ -15,14 +15,18 @@
     // print_r($formatted_data);
     // echo '</pre>';
     $page = $_GET['page'];
+    $pageIndex = $page - 1;
 
-    $json_formatted_results = json_encode(array($page));
-    echo $page;
+    /* $json_formatted_results = json_encode(array($page));
+    echo $page; */
 
+    // Split the array into chunks of 50 pokemons, set preserve_keys to true to retain index number
+    $pokemon_chunks = array_chunk($formatted_results, 50, true);
+    // Count the number of elements inside the pokemon_chunks array
+    $num_of_chunks = count($pokemon_chunks);
 
-
-    // $json_formatted_results = json_encode($formatted_results);
-    // echo $json_formatted_results;
+    $json_formatted_results = json_encode($pokemon_chunks[$pageIndex]);
+    echo $json_formatted_results;
 
     /**
      * Create new JSON file

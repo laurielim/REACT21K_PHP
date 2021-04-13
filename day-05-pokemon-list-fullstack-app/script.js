@@ -4,14 +4,19 @@
 
   function executeScript() {
     // Make API call
-    fetch("formatted_pokemon.php")
+    fetch(`formatted_pokemon.php?page=${currentPage}`)
       // Parse JSON
       .then((response) => response.json())
       .then((data) => {
         // Assign array of pokemonts to a variable
         let pokemons = data;
         // Iterate through each Pokemon to display them
-        pokemons.forEach(addPokemonName);
+
+        for (const [index, pokemon] of Object.entries(pokemons)) {
+          addPokemonName(pokemon, index);
+        }
+
+        // pokemons.forEach(addPokemonName);
       });
 
     /**
