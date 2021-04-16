@@ -1,6 +1,8 @@
-# Practice Exercise - Pokemon List
+# Practice Exercise
 
-## Instructions
+## Pokemon List
+
+### Instructions
 
 1. Download the code provided in Gist and store it as formatted_pokemon.php
    - https://gist.github.com/bch-fullstack/ddebce87fdca00206ca97ec63f2c1000
@@ -11,7 +13,9 @@
 6. Update your front-end application so that it will be an application that lists 50 pokemons at a time, there should be a next and previous buttons that allow you to fetch the previous or next 50 pokemons, and also buttons with page numbers in order to fetch a specific group of 50 pokemons according to their index value.
 7. Previous button should be disabled on the first page,and Next button should be disabledon the last page
 
-# Practice Exercise - Create Pokemons
+## Create Pokemons
+
+### Instructions
 
 1. Create a new php file within your previous exercise folder, name it new_pokemon.php
 2. Have a form with the following input fields: id, name, and type of pokemon as a dropdown
