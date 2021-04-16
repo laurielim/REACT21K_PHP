@@ -29,3 +29,8 @@
    but they aren’t HTTP Response Status code. If you wish to implement proper status code
    response, use the following code as reference
    https://gist.github.com/james2doyle/33794328675a6c88edd6
+
+Note: Fake pokemons come from the following pages:
+
+- https://screenrant.com/fan-made-pokemon-fakemon-look-real-designs/
+- https://www.ranker.com/list/fake-pokemon-that-are-cooler-than-real-ones/zack-howe
