@@ -29,7 +29,7 @@
     // Assign current page number to a global variable
     let currentPage = <?php echo json_encode($page) ?>;
   </script>
-
+  <a href="/new_pokemon.php">Click here to create a Pokemon!</a>
   <section id="poke-list"></section>
   <div id="pagination"></div>
   <script src="script.js"></script>
