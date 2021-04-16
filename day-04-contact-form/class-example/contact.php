@@ -8,7 +8,7 @@
 
     $to = 's2100139@edu.bc.fi';
     $subject = htmlspecialchars($_POST['username']) . 'with email' . htmlspecialchars($_POST['email']) . ' has sent an email';
-    $message = 'Message from ' . $_POST['username'] . ': ' . $_POST['message']; 
+    $message = 'Message from ' . htmlspecialchars($_POST['username'])  . ': ' . htmlspecialchars($_POST['email']); 
     
     $sent_status = mail($to, $subject, $message);
 
