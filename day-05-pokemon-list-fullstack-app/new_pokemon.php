@@ -9,8 +9,11 @@
 <body>
 <h1>Create a Pokemon</h1>
 <form action="formatted_pokemon.php" method="POST">
-<input type="text" name="pokeId" id="pokeId">
+    <label for="pokeId">Pokemon Number:</label>
+<input type="number" name="pokeId" id="pokeId">
+<label for="pokeName">Pokemon Name:</label>
 <input type="text" name="pokeName" id="pokeName">
+<label for="pokeType">Pokemon Type:</label>
 <select name="pokeType" id="pokeType">
 <?php 
 
@@ -21,10 +24,9 @@ foreach ($pokeTypes as $value) {
 }
 
 ?>
-<button type="submit">Create</button>
 
 </select>
+<button type="submit">Create</button>
 </form>
-    
 </body>
 </html>
