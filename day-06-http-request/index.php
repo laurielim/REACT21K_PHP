@@ -54,10 +54,47 @@
 
     function get_recipes(){
         if (!isset($GLOBALS['exploded_parts'][2])) {
-            echo $GLOBALS['data'];
+            echo $GLOBALS['json_data'];
         } else {
-            echo json_encode(array('message' => 'Your recipe'));
+            $data = json_decode($GLOBALS['json_data'], true);
+            $recipes = $data['recipes'];
+
+            // Check that a recipe has been requested by id
+            if (!empty($GLOBALS['exploded_parts'][2])) {
+
+                $recipe = search_recipe_by_id($recipes, $GLOBALS['exploded_parts'][2]);
+                echo json_encode($recipe);
+
+            // Check that a search parameter was used
+            } elseif (!empty($GLOBALS['params'])) {
+
+                $params = $GLOBALS['params'];
+
+                if(array_key_exists('id', $params)) {
+
+                    $recipe = search_recipe_by_id($recipes, $params['id']);
+                    echo json_encode($recipe);
+                } else {
+                    echo "todo";
+                }
+            }
+            else {
+                echo $GLOBALS['json_data'];
+            }
+
+            
         }
+    }
+
+    function search_recipe_by_id($recipe_array, $recipe_id){
+        for ($i = 0; $i <= count($recipe_array); $i++) {
+            if ($recipe_array[$i]['id'] == $recipe_id) {
+                return $recipe_array[$i];
+            }
+        }
+        return array('message' => 'Recipe not found');
+
+
     }
     // echo '<pre>';
     // print_r($_SERVER);
