@@ -8,6 +8,7 @@ Built with:
 
 - HTML
 - PHP
+- Symfony
 
 ## Sources
 
