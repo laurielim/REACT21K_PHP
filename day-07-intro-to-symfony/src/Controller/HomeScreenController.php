@@ -1,5 +1,5 @@
 <?php
-
+/*
 
 namespace App\Controller;
 
@@ -13,9 +13,9 @@ class HomeScreenController extends AbstractController
     /**
      * @Route ("/home", methods={"GET","POST"})
      */
-    public function home()
+/**  public function home()
     {
         // return new Response("<h1>Hello World </h1 >");
         return $this->json(['message' => 'hello world']);
     }
-}
+}*/
